@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Zurich Fitness | Basaveshwar Nagar, Bengaluru | 4.9★ Premium Gym</title>
+<meta name="description" content="Zurich Fitness Basveshwarnagar - Spacious fitness center with modern equipment, personal training & group classes. Rated 4.9 from 286 reviews. Open till 11 PM."/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink: '#070708',
+        coal: '#0E0E11',
+        card: '#131316',
+        line: 'rgba(255,255,255,0.08)',
+        volt: '#D8FF3E',
+        voltDim: '#B8E02E',
+        mute: '#9CA3AF'
+      },
+      fontFamily: {
+        display: ['Anton', 'sans-serif'],
+        body: ['Inter', 'sans-serif'],
+        script: ['Bebas Neue', 'sans-serif']
+      }
+    }
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+*{ -webkit-tap-highlight-color: transparent; }
+html{ scroll-behavior:smooth; }
+body{ background:#070708; color:#fff; font-family:'Inter',sans-serif; overflow-x:hidden; }
+::selection{ background:#D8FF3E; color:#000; }
+::-webkit-scrollbar{ width:10px; }
+::-webkit-scrollbar-track{ background:#0a0a0c; }
+::-webkit-scrollbar-thumb{ background:linear-gradient(#D8FF3E,#7a9a00); border-radius:99px; }
+.font-display{ font-family:'Anton',sans-serif; letter-spacing:.01em; }
+.outline-text{ -webkit-text-stroke:1.5px rgba(255,255,255,.22); color:transparent; }
+.volt-glow{ box-shadow:0 0 40px rgba(216,255,62,.35), 0 8px 30px rgba(0,0,0,.5); }
+.glass{ background:rgba(255,255,255,.06); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); border:1px solid rgba(255,255,255,.1); }
+.grain:after{ content:''; position:fixed; inset:0; pointer-events:none; z-index:5; opacity:.05; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+.hero-bg{ background: radial-gradient(1200px 600px at 70% 10%, rgba(216,255,62,.18), transparent 60%), radial-gradient(800px 500px at 10% 90%, rgba(216,255,62,.08), transparent 60%), linear-gradient(to bottom, rgba(7,7,8,.55), rgba(7,7,8,.92) 70%, #070708 100%); }
+.marquee-track{ display:flex; width:max-content; animation:marquee 22s linear infinite; }
+@keyframes marquee{ to{ transform:translateX(-50%);} }
+.marquee-track:hover{ animation-play-state:paused; }
+.tick{ width:8px; height:8px; background:#D8FF3E; transform:rotate(45deg); display:inline-block; }
+.card-hover{ transition:all .45s cubic-bezier(.16,1,.3,1); }
+.card-hover:hover{ transform:translateY(-8px); border-color:rgba(216,255,62,.5)!important; box-shadow:0 20px 60px rgba(0,0,0,.6), 0 0 0 1px rgba(216,255,62,.3); }
+.btn-volt{ background:#D8FF3E; color:#000; transition:.3s; position:relative; overflow:hidden; }
+.btn-volt:hover{ background:#fff; transform:translateY(-2px); box-shadow:0 12px 30px rgba(216,255,62,.4); }
+.btn-ghost{ border:1px solid rgba(255,255,255,.2); transition:.3s; }
+.btn-ghost:hover{ border-color:#D8FF3E; color:#D8FF3E; background:rgba(216,255,62,.06); }
+.chip{ border:1px solid rgba(255,255,255,.12); transition:.3s; }
+.chip.active, .chip:hover{ background:#D8FF3E; color:#000; border-color:#D8FF3E; font-weight:700; }
+.gallery-img{ transition:transform .8s cubic-bezier(.16,1,.3,1), filter .5s; }
+.gallery-item:hover .gallery-img{ transform:scale(1.08); filter:saturate(1.2); }
+.stars{ color:#D8FF3E; letter-spacing:2px; }
+.progress-dots span{ width:8px; height:8px; border-radius:99px; background:rgba(255,255,255,.2); transition:.3s; }
+.progress-dots span.active{ width:28px; background:#D8FF3E; }
+.timetable-row{ transition:.25s; }
+.timetable-row:hover{ background:rgba(216,255,62,.07); }
+input, select, textarea{ color-scheme:dark; }
+input:focus, select:focus, textarea:focus{ outline:none; border-color:#D8FF3E!important; box-shadow:0 0 0 3px rgba(216,255,62,.15); }
+#preloader{ transition:opacity .6s, visibility .6s; }
+.spin-ring{ animation:spin 1.2s linear infinite; }
+@keyframes spin{ to{ transform:rotate(360deg);} }
+@keyframes float{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-12px);} }
+.float{ animation:float 5s ease-in-out infinite; }
+@keyframes pulse-live{ 0%,100%{ box-shadow:0 0 0 0 rgba(34,197,94,.6);} 50%{ box-shadow:0 0 0 10px rgba(34,197,94,0);} }
+.live-dot{ animation:pulse-live 2s infinite; }
+.reveal{ opacity:0; transform:translateY(30px); }
+.tab-btn.active{ background:#fff; color:#000; }
+.faq-answer{ max-height:0; overflow:hidden; transition:max-height .5s cubic-bezier(.16,1,.3,1); }
+.faq-item.open .faq-answer{ max-height:300px; }
+.faq-item.open .faq-icon{ transform:rotate(45deg); background:#D8FF3E; color:#000; }
+.tab-day.active{ background:#D8FF3E; color:#000; border-color:#D8FF3E; font-weight:800; }
+.like-btn.liked{ color:#ff4d6d!important; }
+.like-btn.liked i{ font-weight:900; }
+.bmi-needle{ transition:transform 1s cubic-bezier(.16,1,.3,1); transform-origin:bottom center; }
+.toast-in{ animation:toastIn .4s cubic-bezier(.16,1,.3,1) forwards; }
+@keyframes toastIn{ from{ transform:translateX(100%); opacity:0;} to{ transform:translateX(0); opacity:1;} }
+.nav-link{ position:relative; }
+.nav-link:after{ content:''; position:absolute; left:0; bottom:-4px; height:2px; width:0; background:#D8FF3E; transition:.3s; }
+.nav-link:hover:after, .nav-link.active:after{ width:100%; }
+.nav-link.active{ color:#D8FF3E; }
+.lightbox-open{ overflow:hidden; }
+.diagonal{ clip-path:polygon(0 0, 100% 4%, 100% 100%, 0 96%); }
+@media(max-width:768px){ .outline-text{ -webkit-text-stroke:1px rgba(255,255,255,.22);} }
+</style>
+</head>
+<body class="grain antialiased">
+
+<!-- PRELOADER -->
+<div id="preloader" class="fixed inset-0 z-[100] bg-ink flex flex-col items-center justify-center gap-6">
+  <div class="relative w-24 h-24 flex items-center justify-center">
+    <div class="absolute inset-0 rounded-full border-2 border-white/10"></div>
+    <div class="absolute inset-0 rounded-full border-t-2 border-volt spin-ring"></div>
+    <div class="font-display text-3xl">Z<span class="text-volt">.</span></div>
+  </div>
+  <div class="font-display tracking-[.3em] text-sm text-white/70">ZURICH FITNESS</div>
+  <div class="text-xs text-volt tracking-widest">BASAVESHWAR NAGAR • BLR</div>
+</div>
+
+<!-- SCROLL PROGRESS -->
+<div class="fixed top-0 left-0 h-[3px] bg-volt z-[90] w-0" id="scrollBar"></div>
+
+<!-- TOP UTILITY BAR -->
+<div class="bg-volt text-black text-[12px] md:text-[13px] font-semibold relative z-40">
+  <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between gap-3">
+    <div class="flex items-center gap-2 truncate">
+      <span class="hidden sm:inline-flex w-2 h-2 rounded-full bg-green-700 live-dot"></span>
+      <span id="topStatus" class="truncate">Open Now • Closes 11:00 PM • Join Today</span>
+    </div>
+    <div class="flex items-center gap-4 shrink-0">
+      <a href="tel:+918618889800" class="flex items-center gap-1.5 hover:underline"><i class="fa-solid fa-phone"></i> <span class="hidden sm:inline">086188 89800</span><span class="sm:hidden">Call</span></a>
+      <a href="#trial" class="bg-black text-volt px-3 py-1 rounded-full text-[11px] tracking-wide hover:bg-zinc-800">FREE TRIAL →</a>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<header id="navbar" class="sticky top-0 z-[80] bg-ink/85 backdrop-blur-xl border-b border-line transition-all">
+  <div class="max-w-7xl mx-auto px-4 md:px-6 py-3 flex items-center justify-between gap-4">
+    <a href="#top" class="flex items-center gap-3 group">
+      <div class="w-11 h-11 rounded-2xl bg-volt flex items-center justify-center font-display text-black text-2xl rotate-3 group-hover:rotate-12 transition volt-glow">Z</div>
+      <div class="leading-tight">
+        <div class="font-display text-xl tracking-wide">ZURICH <span class="text-volt">FITNESS</span></div>
+        <div class="text-[10px] tracking-[.25em] text-white/60 font-semibold">BASAVESHWAR NAGAR • BLR</div>
+      </div>
+    </a>
+    <nav class="hidden lg:flex items-center gap-7 text-[13px] font-semibold tracking-wide text-white/80">
+      <a href="#overview" class="nav-link hover:text-white">OVERVIEW</a>
+      <a href="#services" class="nav-link hover:text-white">SERVICES</a>
+      <a href="#schedule" class="nav-link hover:text-white">SCHEDULE</a>
+      <a href="#photos" class="nav-link hover:text-white">PHOTOS</a>
+      <a href="#reviews" class="nav-link hover:text-white">REVIEWS</a>
+      <a href="#social" class="nav-link hover:text-white">SOCIAL</a>
+      <a href="#visit" class="nav-link hover:text-white">VISIT</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <div class="hidden md:flex items-center gap-1.5 glass rounded-full px-3 py-1.5 text-xs font-bold">
+        <i class="fa-solid fa-star text-volt"></i> 4.9 <span class="text-white/50 font-medium">(286)</span>
+      </div>
+      <a href="tel:+918618889800" class="hidden sm:inline-flex btn-ghost rounded-full px-4 py-2.5 text-sm font-bold items-center gap-2"><i class="fa-solid fa-phone text-volt"></i> Call</a>
+      <a href="#trial" class="btn-volt rounded-full px-5 py-2.5 text-sm font-extrabold">JOIN NOW</a>
+      <button id="menuBtn" class="lg:hidden w-11 h-11 rounded-full border border-line flex items-center justify-center"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="lg:hidden hidden border-t border-line bg-coal/95 backdrop-blur-xl">
+    <div class="px-6 py-4 grid gap-1 text-sm font-bold tracking-wide">
+      <a href="#overview" class="py-3 border-b border-line flex justify-between items-center">OVERVIEW <i class="fa-solid fa-arrow-right text-volt"></i></a>
+      <a href="#services" class="py-3 border-b border-line flex justify-between items-center">SERVICES <i class="fa-solid fa-arrow-right text-volt"></i></a>
+      <a href="#schedule" class="py-3 border-b border-line flex justify-between items-center">SCHEDULE <i class="fa-solid fa-arrow-right text-volt"></i></a>
+      <a href="#photos" class="py-3 border-b border-line flex justify-between items-center">PHOTOS <i class="fa-solid fa-arrow-right text-volt"></i></a>
+      <a href="#reviews" class="py-3 border-b border-line flex justify-between items-center">REVIEWS <i class="fa-solid fa-arrow-right text-volt"></i></a>
+      <a href="#social" class="py-3 border-b border-line flex justify-between items-center">SOCIAL <i class="fa-solid fa-arrow-right text-volt"></i></a>
+      <a href="#visit" class="py-3 flex justify-between items-center">VISIT & DIRECTIONS <i class="fa-solid fa-arrow-right text-volt"></i></a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="top" class="relative min-h-[92vh] flex items-center overflow-hidden">
+  <div class="absolute inset-0">
+    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1920&auto=format&fit=crop" alt="Zurich Fitness Gym" class="w-full h-full object-cover"/>
+    <div class="absolute inset-0 hero-bg"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-black/40"></div>
+  </div>
+  <div class="relative max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-24 grid lg:grid-cols-[1.15fr_.85fr] gap-10 items-center w-full">
+    <div>
+      <div class="reveal flex flex-wrap items-center gap-3 mb-6">
+        <a href="#reviews" class="glass rounded-full pl-2 pr-4 py-1.5 flex items-center gap-3 hover:border-volt/50 transition">
+          <span class="flex items-center gap-1 bg-white rounded-full px-2.5 py-1 text-black text-xs font-extrabold"><i class="fa-brands fa-google text-[#4285F4]"></i> 4.9</span>
+          <span class="stars text-sm">★★★★★</span>
+          <span class="text-xs text-white/70 font-semibold underline underline-offset-4">286 Google Reviews</span>
+        </a>
+        <div class="glass rounded-full px-4 py-2 text-xs font-bold flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-green-400 live-dot"></span> <span id="heroStatus">OPEN NOW • TILL 11 PM</span>
+        </div>
+      </div>
+      <h1 class="reveal font-display leading-[.92] text-[52px] sm:text-[72px] lg:text-[98px]">
+        TRAIN HARD.<br/>
+        <span class="text-volt">STAY HUMBLE.</span><br/>
+        <span class="outline-text">BE ZURICH FIT.</span>
+      </h1>
+      <p class="reveal mt-6 max-w-xl text-white/70 text-[15px] md:text-lg leading-relaxed">Bengaluru's spacious, high-energy fitness destination in <span class="text-white font-semibold">Basaveshwar Nagar</span> — modern strength & cardio equipment, certified personal trainers and electrifying group classes from HIIT to Zumba.</p>
+      <div class="reveal mt-8 flex flex-wrap gap-3">
+        <a href="https://www.google.com/maps/search/?api=1&query=Zurich+Fitness+R.N+Arcade+Basaveshwar+Nagar+Bengaluru+560079" target="_blank" class="btn-volt rounded-full px-7 py-4 font-extrabold text-sm flex items-center gap-2"><i class="fa-solid fa-location-arrow"></i> GET DIRECTIONS</a>
+        <a href="tel:+918618889800" class="btn-ghost glass rounded-full px-7 py-4 font-bold text-sm flex items-center gap-2"><i class="fa-solid fa-phone text-volt"></i> 086188 89800</a>
+        <a href="#trial" class="rounded-full px-7 py-4 font-bold text-sm border border-dashed border-white/30 hover:border-volt hover:text-volt transition flex items-center gap-2"><i class="fa-solid fa-bolt"></i> Book Free Trial</a>
+      </div>
+      <div class="reveal mt-10 grid grid-cols-3 max-w-lg gap-4">
+        <div class="glass rounded-2xl p-4 text-center"><div class="font-display text-2xl md:text-3xl text-volt"><span class="counter" data-target="5000">0</span>+</div><div class="text-[11px] tracking-widest text-white/60 font-bold mt-1">SQ.FT SPACIOUS FLOOR</div></div>
+        <div class="glass rounded-2xl p-4 text-center"><div class="font-display text-2xl md:text-3xl text-volt"><span class="counter" data-target="10">0</span></div><div class="text-[11px] tracking-widest text-white/60 font-bold mt-1">SIGNATURE PROGRAMS</div></div>
+        <div class="glass rounded-2xl p-4 text-center"><div class="font-display text-2xl md:text-3xl text-volt"><span class="counter" data-target="15">0</span>+</div><div class="text-[11px] tracking-widest text-white/60 font-bold mt-1">EXPERT COACHES</div></div>
+      </div>
+    </div>
+
+    <!-- HERO INFO CARD -->
+    <div class="reveal relative">
+      <div class="absolute -inset-3 bg-gradient-to-br from-volt/30 to-transparent rounded-[28px] blur-2xl"></div>
+      <div class="relative bg-[#101014]/90 backdrop-blur-2xl border border-white/10 rounded-[26px] overflow-hidden">
+        <div class="relative h-52">
+          <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Training"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-[#101014] to-transparent"></div>
+          <div class="absolute top-4 left-4 flex gap-2">
+            <span class="bg-volt text-black text-[11px] font-extrabold px-3 py-1.5 rounded-full">★ 4.9 RATED</span>
+            <span class="bg-black/70 backdrop-blur text-white text-[11px] font-bold px-3 py-1.5 rounded-full border border-white/20">OPEN TILL 11 PM</span>
+          </div>
+          <div class="absolute bottom-3 left-5 right-5 flex items-end justify-between">
+            <div><div class="font-display text-2xl">ZURICH FITNESS</div><div class="text-xs text-white/60">R.N Arcade, Basaveshwar Nagar</div></div>
+            <div class="w-12 h-12 rounded-full bg-volt text-black flex items-center justify-center text-xl float"><i class="fa-solid fa-dumbbell"></i></div>
+          </div>
+        </div>
+        <div class="p-5 space-y-3 text-sm">
+          <div class="flex gap-3 items-start bg-white/5 border border-white/10 rounded-2xl p-3.5">
+            <div class="w-9 h-9 rounded-xl bg-volt/15 text-volt flex items-center justify-center shrink-0"><i class="fa-solid fa-location-dot"></i></div>
+            <p class="text-white/75 leading-relaxed text-[13px]">R.N Arcade, 13, 2nd Stage Rd, A D Halli, Stage 1, Extension, Basaveshwar Nagar, Bengaluru, Karnataka 560079</p>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-3.5"><div class="text-[11px] text-white/50 font-bold tracking-widest mb-1"><i class="fa-regular fa-clock mr-1 text-volt"></i> HOURS</div><div class="font-bold text-[13px]">5:30 AM – 11:00 PM</div><div class="text-[11px] text-green-400 font-bold mt-0.5">Open All Days</div></div>
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-3.5"><div class="text-[11px] text-white/50 font-bold tracking-widest mb-1"><i class="fa-solid fa-phone mr-1 text-volt"></i> CONTACT</div><div class="font-bold text-[13px]">086188 89800</div><a href="tel:+918618889800" class="text-[11px] text-volt font-bold">Tap to Call →</a></div>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <a href="https://www.google.com/maps/search/?api=1&query=Zurich+Fitness+R.N+Arcade+Basaveshwar+Nagar+Bengaluru+560079" target="_blank" class="bg-volt text-black rounded-2xl p-3.5 font-extrabold text-center text-[13px] hover:bg-white transition">DIRECTIONS <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></a>
+            <a href="#trial" class="bg-white text-black rounded-2xl p-3.5 font-extrabold text-center text-[13px] hover:bg-volt transition">FREE TRIAL</a>
+          </div>
+          <p class="text-center text-[11px] text-white/40">⚡ Limited Offer: No joining fee this month for Basaveshwar Nagar residents</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40 text-[10px] tracking-[.3em]">SCROLL <span class="w-[1px] h-8 bg-gradient-to-b from-volt to-transparent"></span></div>
+</section>
+
+<!-- MARQUEE -->
+<div class="bg-volt text-black py-3.5 overflow-hidden border-y-4 border-black -rotate-1 scale-[1.02] relative z-10">
+  <div class="marquee-track gap-8 font-display text-lg tracking-wide whitespace-nowrap">
+    <div class="flex gap-8 items-center pr-8" id="marqueeContent">
+      <span>HIIT</span><span class="tick bg-black"></span><span>CROSSFIT</span><span class="tick bg-black"></span><span>ZUMBA</span><span class="tick bg-black"></span><span>YOGA</span><span class="tick bg-black"></span><span>PERSONAL TRAINING</span><span class="tick bg-black"></span><span>WEIGHT TRAINING</span><span class="tick bg-black"></span><span>AEROBICS</span><span class="tick bg-black"></span><span>NUTRITION</span><span class="tick bg-black"></span><span>DANCE FITNESS</span><span class="tick bg-black"></span>
+    </div>
+  </div>
+</div>
+
+<!-- OVERVIEW -->
+<section id="overview" class="max-w-7xl mx-auto px-4 md:px-6 pt-20 pb-10 scroll-mt-28">
+  <div class="flex items-center gap-3 mb-4 reveal">
+    <span class="bg-volt text-black text-[11px] font-extrabold px-3 py-1.5 rounded-full tracking-widest">01 • OVERVIEW</span>
+    <span class="h-[1px] flex-1 bg-white/10"></span>
+    <span class="text-xs text-white/40 font-semibold hidden sm:block">R.N Arcade • 2nd Stage Rd</span>
+  </div>
+  <div class="grid lg:grid-cols-2 gap-10 items-start">
+    <div>
+      <h2 class="reveal font-display text-4xl md:text-6xl leading-[.95]">BENGALURU'S <span class="text-volt">SPACIOUS</span> POWERHOUSE FOR EVERY GOAL.</h2>
+      <p class="reveal mt-6 text-white/65 leading-relaxed">Located in the heart of Basaveshwar Nagar, <strong class="text-white">Zurich Fitness</strong> is a large-format, fully air-conditioned fitness center built for results. Think soaring ceilings, dedicated strength, cardio, functional & mind-body zones — plus modern imported equipment maintained to perfection.</p>
+      <div class="reveal mt-8 grid sm:grid-cols-3 gap-4">
+        <div class="card-hover bg-card border border-line rounded-2xl p-5">
+          <div class="w-11 h-11 rounded-xl bg-volt text-black flex items-center justify-center text-lg mb-4"><i class="fa-solid fa-dumbbell"></i></div>
+          <h4 class="font-extrabold text-sm mb-1.5">MODERN EQUIPMENT</h4>
+          <p class="text-xs text-white/55 leading-relaxed">Plate-loaded machines, free weights up to 60kg, treadmills, spin bikes & functional rigs.</p>
+        </div>
+        <div class="card-hover bg-card border border-line rounded-2xl p-5">
+          <div class="w-11 h-11 rounded-xl bg-volt text-black flex items-center justify-center text-lg mb-4"><i class="fa-solid fa-user-check"></i></div>
+          <h4 class="font-extrabold text-sm mb-1.5">PERSONAL TRAINING</h4>
+          <p class="text-xs text-white/55 leading-relaxed">1-on-1 coaching, body composition tracking, custom diet & transformation plans.</p>
+        </div>
+        <div class="card-hover bg-card border border-line rounded-2xl p-5">
+          <div class="w-11 h-11 rounded-xl bg-volt text-black flex items-center justify-center text-lg mb-4"><i class="fa-solid fa-people-group"></i></div>
+          <h4 class="font-extrabold text-sm mb-1.5">GROUP CLASSES</h4>
+          <p class="text-xs text-white/55 leading-relaxed">Daily Zumba, Yoga, Aerobics, HIIT, Dance Fitness & Youth batches that feel like festivals.</p>
+        </div>
+      </div>
+      <div class="reveal mt-6 flex flex-wrap gap-2.5 text-[12px] font-bold">
+        <span class="chip rounded-full px-4 py-2 bg-white/5"><i class="fa-solid fa-check text-volt mr-1"></i> Fully Air-Conditioned</span>
+        <span class="chip rounded-full px-4 py-2 bg-white/5"><i class="fa-solid fa-check text-volt mr-1"></i> Locker & Shower</span>
+        <span class="chip rounded-full px-4 py-2 bg-white/5"><i class="fa-solid fa-check text-volt mr-1"></i> Diet Counseling</span>
+        <span class="chip rounded-full px-4 py-2 bg-white/5"><i class="fa-solid fa-check text-volt mr-1"></i> Parking Available</span>
+        <span class="chip rounded-full px-4 py-2 bg-white/5"><i class="fa-solid fa-check text-volt mr-1"></i> Youth Safe Batches</span>
+      </div>
+    </div>
+    <div class="space-y-4">
+      <div class="reveal bg-card border border-line rounded-3xl overflow-hidden">
+        <div class="p-5 flex items-center justify-between border-b border-line">
+          <h3 class="font-display text-xl tracking-wide"><i class="fa-regular fa-clock text-volt mr-2"></i>OPERATING HOURS</h3>
+          <span id="openBadge" class="text-[11px] font-extrabold px-3 py-1.5 rounded-full bg-green-500/15 text-green-400 border border-green-500/30 flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-green-400 live-dot"></span> OPEN NOW</span>
+        </div>
+        <div class="divide-y divide-white/5 text-sm" id="hoursTable"></div>
+        <div class="p-4 bg-volt/10 border-t border-volt/20 text-[13px] flex items-center gap-2"><i class="fa-solid fa-moon text-volt"></i> <span><strong>Open until 11:00 PM</strong> — perfect for late-evening workouts after work.</span></div>
+      </div>
+      <div class="reveal grid grid-cols-2 gap-4">
+        <div class="rounded-3xl overflow-hidden relative h-56 group">
+          <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover gallery-img" alt="Strength"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 font-display">STRENGTH<br/><span class="text-volt text-sm tracking-widest">ZONE</span></div>
+        </div>
+        <div class="rounded-3xl overflow-hidden relative h-56 group">
+          <img src="https://images.unsplash.com/photo-1552196563-55cd4e45efb3?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover gallery-img" alt="Yoga"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 font-display">MIND-BODY<br/><span class="text-volt text-sm tracking-widest">STUDIO</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="max-w-7xl mx-auto px-4 md:px-6 py-16 scroll-mt-28">
+  <div class="flex items-center gap-3 mb-4 reveal">
+    <span class="bg-volt text-black text-[11px] font-extrabold px-3 py-1.5 rounded-full tracking-widest">02 • SERVICES</span>
+    <span class="h-[1px] flex-1 bg-white/10"></span>
+  </div>
+  <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+    <h2 class="reveal font-display text-4xl md:text-6xl leading-none">10 WAYS TO <span class="text-volt">GET FIT.</span><br/><span class="outline-text">PICK YOUR POISON.</span></h2>
+    <p class="reveal text-white/55 max-w-sm text-sm leading-relaxed">Every program is coach-led, beginner-friendly and scalable. Tap any card for timings, calories & coach info.</p>
+  </div>
+  <div class="reveal flex flex-wrap gap-2 mb-8" id="serviceFilters">
+    <button data-filter="all" class="chip active rounded-full px-5 py-2.5 text-xs font-bold">ALL • 10</button>
+    <button data-filter="strength" class="chip rounded-full px-5 py-2.5 text-xs font-bold bg-white/5">STRENGTH</button>
+    <button data-filter="cardio" class="chip rounded-full px-5 py-2.5 text-xs font-bold bg-white/5">CARDIO & DANCE</button>
+    <button data-filter="mind" class="chip rounded-full px-5 py-2.5 text-xs font-bold bg-white/5">MIND & BODY</button>
+    <button data-filter="coach" class="chip rounded-full px-5 py-2.5 text-xs font-bold bg-white/5">COACHING</button>
+  </div>
+  <div id="servicesGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"></div>
+</section>
+
+<!-- SCHEDULE + BMI + PRICING -->
+<section id="schedule" class="bg-coal border-y border-line py-16 scroll-mt-20 relative overflow-hidden">
+  <div class="absolute -top-20 -right-20 font-display text-[220px] leading-none text-white/[.03] select-none pointer-events-none hidden lg:block">ZURICH</div>
+  <div class="max-w-7xl mx-auto px-4 md:px-6">
+    <div class="flex items-center gap-3 mb-4 reveal">
+      <span class="bg-white text-black text-[11px] font-extrabold px-3 py-1.5 rounded-full tracking-widest">03 • TRAIN SMART</span>
+      <span class="h-[1px] flex-1 bg-white/10"></span>
+    </div>
+    <div class="grid lg:grid-cols-[1.2fr_.8fr] gap-6">
+      <!-- Timetable -->
+      <div class="reveal bg-card border border-line rounded-3xl p-5 md:p-7">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+          <h3 class="font-display text-2xl md:text-3xl">LIVE CLASS <span class="text-volt">TIMETABLE</span></h3>
+          <div class="text-xs bg-white/5 border border-white/10 rounded-full px-4 py-2 font-bold">🎟️ My Bookings: <span id="bookingCount" class="text-volt">0</span> <button onclick="clearBookings()" class="ml-2 underline text-white/50">clear</button></div>
+        </div>
+        <div class="flex gap-2 overflow-x-auto pb-3 mb-4" id="dayTabs"></div>
+        <div id="classList" class="space-y-2.5"></div>
+        <p class="mt-4 text-[12px] text-white/40"><i class="fa-solid fa-circle-info text-volt mr-1"></i> Arrive 10 mins early. Mats & equipment provided. Youth batches need guardian consent.</p>
+      </div>
+      <!-- BMI -->
+      <div class="space-y-6">
+        <div class="reveal bg-gradient-to-br from-volt to-[#a8cc1a] text-black rounded-3xl p-6 md:p-7 relative overflow-hidden">
+          <div class="absolute -right-6 -bottom-8 text-[120px] opacity-10"><i class="fa-solid fa-heart-pulse"></i></div>
+          <h3 class="font-display text-2xl mb-1">KNOW YOUR BMI</h3>
+          <p class="text-xs font-semibold opacity-70 mb-5">Free body-composition check for trial members</p>
+          <div class="grid grid-cols-2 gap-3 mb-3">
+            <div><label class="text-[11px] font-extrabold tracking-widest">HEIGHT (CM)</label><input id="bmiH" type="number" value="170" class="mt-1 w-full bg-black/10 border-2 border-black/15 rounded-xl px-3 py-2.5 font-bold text-black placeholder-black/40"/></div>
+            <div><label class="text-[11px] font-extrabold tracking-widest">WEIGHT (KG)</label><input id="bmiW" type="number" value="72" class="mt-1 w-full bg-black/10 border-2 border-black/15 rounded-xl px-3 py-2.5 font-bold text-black placeholder-black/40"/></div>
+          </div>
+          <button onclick="calcBMI()" class="w-full bg-black text-volt font-extrabold rounded-xl py-3.5 text-sm hover:bg-zinc-900 transition">CALCULATE BMI <i class="fa-solid fa-calculator ml-1"></i></button>
+          <div class="mt-4 bg-black text-white rounded-2xl p-4 flex items-center gap-4">
+            <div class="relative w-20 h-12 overflow-hidden shrink-0">
+              <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[76px] h-[76px] rounded-full border-[8px] border-b-0 border-white/15" style="border-color:#333 #333 transparent #333; transform:rotate(0deg);"></div>
+              <div id="bmiNeedle" class="bmi-needle absolute bottom-0 left-1/2 w-[3px] h-[32px] bg-volt -translate-x-1/2" style="transform:rotate(-70deg);"></div>
+              <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-volt rounded-full"></div>
+            </div>
+            <div><div class="font-display text-3xl leading-none"><span id="bmiVal">--</span></div><div id="bmiCat" class="text-xs font-bold text-volt mt-1">Enter details & calculate</div></div>
+          </div>
+        </div>
+        <div class="reveal bg-card border border-line rounded-3xl p-6">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="font-display text-xl">MEMBERSHIP</h3>
+            <div class="flex bg-white/5 rounded-full p-1 text-xs font-bold border border-white/10">
+              <button id="billMonthly" class="tab-btn active px-4 py-1.5 rounded-full transition" onclick="setBilling('m')">Monthly</button>
+              <button id="billYearly" class="tab-btn px-4 py-1.5 rounded-full transition" onclick="setBilling('y')">Yearly −20%</button>
+            </div>
+          </div>
+          <div id="priceCards" class="grid grid-cols-3 gap-2.5"></div>
+          <a href="#trial" class="mt-4 block text-center bg-white/5 border border-dashed border-volt/40 text-volt rounded-2xl py-3 text-xs font-extrabold hover:bg-volt hover:text-black transition">CLAIM FREE TRIAL + PRICE LIST ON WHATSAPP</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTOS -->
+<section id="photos" class="max-w-7xl mx-auto px-4 md:px-6 py-16 scroll-mt-28">
+  <div class="flex items-center gap-3 mb-4 reveal">
+    <span class="bg-volt text-black text-[11px] font-extrabold px-3 py-1.5 rounded-full tracking-widest">04 • PHOTOS</span>
+    <span class="h-[1px] flex-1 bg-white/10"></span>
+    <span class="text-xs text-white/40">Tap to expand</span>
+  </div>
+  <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+    <h2 class="reveal font-display text-4xl md:text-6xl leading-none">INSIDE <span class="text-volt">ZURICH.</span></h2>
+    <div class="reveal flex gap-2 flex-wrap" id="photoFilters">
+      <button data-pfilter="all" class="chip active rounded-full px-4 py-2 text-xs font-bold">ALL</button>
+      <button data-pfilter="gym" class="chip rounded-full px-4 py-2 text-xs font-bold bg-white/5">GYM FLOOR</button>
+      <button data-pfilter="class" class="chip rounded-full px-4 py-2 text-xs font-bold bg-white/5">CLASSES</button>
+      <button data-pfilter="zone" class="chip rounded-full px-4 py-2 text-xs font-bold bg-white/5">ZONES</button>
+    </div>
+  </div>
+  <div id="photoGrid" class="grid grid-cols-2 lg:grid-cols-4 gap-3 auto-rows-[180px] md:auto-rows-[220px]"></div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="bg-[#0C0C0E] border-y border-line py-16 relative overflow-hidden scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-4 md:px-6">
+    <div class="flex items-center gap-3 mb-4 reveal">
+      <span class="bg-volt text-black text-[11px] font-extrabold px-3 py-1.5 rounded-full tracking-widest">05 • REVIEWS</span>
+      <span class="h-[1px] flex-1 bg-white/10"></span>
+      <span class="text-xs font-bold text-white/50 flex items-center gap-1"><i class="fa-brands fa-google text-sm"></i> Google Reviews</span>
+    </div>
+    <div class="grid lg:grid-cols-[.9fr_1.1fr] gap-6">
+      <!-- Summary -->
+      <div class="reveal bg-card border border-line rounded-3xl p-6 md:p-8">
+        <div class="flex items-center gap-5">
+          <div class="text-center shrink-0">
+            <div class="font-display text-7xl leading-none">4.9</div>
+            <div class="stars text-lg my-1">★★★★★</div>
+            <div class="text-xs text-white/50 font-semibold">286 reviews</div>
+          </div>
+          <div class="flex-1 space-y-2" id="ratingBars"></div>
+        </div>
+        <div class="mt-6 bg-gradient-to-br from-white/[.07] to-transparent border border-white/10 rounded-2xl p-5 relative">
+          <i class="fa-brands fa-google text-2xl absolute top-4 right-5 opacity-80"></i>
+          <h4 class="font-extrabold text-sm tracking-wide mb-2 text-volt">GOOGLE REVIEW SUMMARY</h4>
+          <p class="text-sm text-white/70 leading-relaxed italic">"Members consistently praise Zurich's <span class="text-white font-semibold not-italic">spotlessly clean, motivating environment</span> and <span class="text-white font-semibold not-italic">highly knowledgeable staff.</span> Trainers are called supportive, attentive to form, and excellent at pushing you safely toward fat-loss and strength goals."</p>
+          <div class="mt-4 flex flex-wrap gap-2 text-[11px] font-bold">
+            <span class="bg-volt/15 text-volt border border-volt/25 rounded-full px-3 py-1.5">✨ Clean & Hygienic</span>
+            <span class="bg-volt/15 text-volt border border-volt/25 rounded-full px-3 py-1.5">🔥 Motivating Vibe</span>
+            <span class="bg-volt/15 text-volt border border-volt/25 rounded-full px-3 py-1.5">🎓 Knowledgeable Coaches</span>
+          </div>
+        </div>
+        <div class="mt-5 grid grid-cols-2 gap-3">
+          <a href="https://www.google.com/maps/search/?api=1&query=Zurich+Fitness+Basaveshwar+Nagar+Bengaluru" target="_blank" class="btn-volt rounded-2xl py-3.5 text-center text-[13px] font-extrabold">REVIEW US ON GOOGLE</a>
+          <button onclick="openReviewModal()" class="btn-ghost rounded-2xl py-3.5 text-[13px] font-bold">WRITE A REVIEW</button>
+        </div>
+      </div>
+      <!-- Carousel -->
+      <div class="reveal">
+        <div class="relative bg-card border border-line rounded-3xl p-6 md:p-8 overflow-hidden min-h-[380px] flex flex-col justify-between">
+          <div class="absolute top-0 left-0 w-full h-1 bg-white/10"><div id="reviewProgress" class="h-full bg-volt transition-all" style="width:20%"></div></div>
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="flex items-center gap-2 text-xs font-bold text-white/50"><span class="w-2 h-2 rounded-full bg-volt"></span> VERIFIED MEMBER STORIES</div>
+              <div class="flex gap-2">
+                <button onclick="moveReview(-1)" class="w-10 h-10 rounded-full border border-white/15 hover:bg-volt hover:text-black hover:border-volt transition"><i class="fa-solid fa-arrow-left"></i></button>
+                <button onclick="moveReview(1)" class="w-10 h-10 rounded-full border border-white/15 hover:bg-volt hover:text-black hover:border-volt transition"><i class="fa-solid fa-arrow-right"></i></button>
+              </div>
+            </div>
+            <div id="reviewCard" class="transition-all duration-500"></div>
+          </div>
+          <div class="mt-6 flex items-center justify-between">
+            <div class="progress-dots flex gap-1.5" id="reviewDots"></div>
+            <div class="text-[11px] text-white/40 font-bold tracking-widest">SWIPE • AUTO-PLAYING</div>
+          </div>
+        </div>
+        <div id="miniReviews" class="grid sm:grid-cols-2 gap-3 mt-4"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRAINERS -->
+<section class="max-w-7xl mx-auto px-4 md:px-6 py-16">
+  <div class="flex items-center gap-3 mb-6 reveal">
+    <span class="bg-white text-black text-[11px] font-extrabold px-3 py-1.5 rounded-full tracking-widest">COACHES</span>
+    <span class="h-[1px] flex-1 bg-white/10"></span>
+  </div>
+  <div class="flex flex-col md:flex-row md:items-end justify-between gap-3 mb-8">
+    <h2 class="reveal font-display text-4xl md:text-5xl">KNOWLEDGEABLE STAFF.<br/><span class="text-volt">REAL TRANSFORMATIONS.</span></h2>
+    <p class="reveal text-sm text-white/55 max-w-md">Certified in strength, CrossFit L1, Zumba & Yoga Alliance. Every new member gets a free posture & goal assessment.</p>
+  </div>
+  <div id="trainerGrid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
+</section>
+
+<!-- SOCIAL -->
+<section id="social" class="bg-coal border-y border-line py-16 scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-4 md:px-6">
+    <div class="flex items-center gap-3 mb-6 reveal">
+      <span class="bg-gradient-to-r from-[#FF3E7A] to-[#FF8A3E] text-white text-[11px] font-extrabold px-3 py-1.5 rounded-full tracking-widest">06 • SOCIAL MEDIA UPDATES</span>
+      <span class="h-[1px] flex-1 bg-white/10"></span>
+    </div>
+    <div class="bg-card border border-line rounded-3xl p-5 md:p-6 mb-6 flex flex-col md:flex-row items-center gap-5 reveal">
+      <div class="flex items-center gap-4 flex-1 w-full">
+        <div class="w-16 h-16 rounded-full p-[3px] bg-gradient-to-tr from-[#FF3E7A] via-[#FF8A3E] to-[#FFD93E] shrink-0">
+          <div class="w-full h-full rounded-full bg-black flex items-center justify-center font-display text-2xl border-2 border-black">Z</div>
+        </div>
+        <div class="flex-1">
+          <div class="flex items-center gap-2 font-extrabold">zurich.fitness.blr <i class="fa-solid fa-circle-check text-sky-400"></i></div>
+          <div class="text-xs text-white/50">Basaveshwar Nagar • 12.4K followers • 480 posts</div>
+          <div class="text-xs text-white/70 mt-1">💪 Open till 11 PM | 🏋️ Strength • Zumba • Yoga • CrossFit | 📍 R.N Arcade</div>
+        </div>
+      </div>
+      <div class="flex gap-2 w-full md:w-auto">
+        <button id="followBtn" onclick="toggleFollow()" class="flex-1 md:flex-none bg-volt text-black font-extrabold text-sm rounded-full px-8 py-3 hover:bg-white transition">Follow</button>
+        <a href="tel:+918618889800" class="flex-1 md:flex-none btn-ghost rounded-full px-8 py-3 text-sm font-bold text-center">Contact</a>
+      </div>
+    </div>
+    <div class="flex gap-2 mb-6 overflow-x-auto reveal" id="storyRow"></div>
+    <div id="socialGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+  </div>
+</section>
+
+<!-- VISIT / MAP / TRIAL -->
+<section id="visit" class="max-w-7xl mx-auto px-4 md:px-6 py-16 scroll-mt-28">
+  <div class="flex items-center gap-3 mb-6 reveal">
+    <span class="bg-volt text-black text-[11px] font-extrabold px-3 py-1.5 rounded-full tracking-widest">07 • VISIT & DIRECTIONS</span>
+    <span class="h-[1px] flex-1 bg-white/10"></span>
+  </div>
+  <div class="grid lg:grid-cols-[1.1fr_.9fr] gap-6">
+    <div class="reveal rounded-3xl overflow-hidden border border-line relative min-h-[420px] bg-card">
+      <iframe title="Zurich Fitness Map" src="https://www.google.com/maps?q=R.N%20Arcade,%2013,%202nd%20Stage%20Rd,%20Basaveshwar%20Nagar,%20Bengaluru%20560079&output=embed" class="absolute inset-0 w-full h-full grayscale invert-[.92] contrast-[.9]" style="border:0" loading="lazy" allowfullscreen></iframe>
+      <div class="absolute bottom-4 left-4 right-4 md:right-auto glass rounded-2xl p-4 flex items-center gap-4 bg-black/70">
+        <div class="w-12 h-12 rounded-2xl bg-volt text-black flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="flex-1 min-w-0">
+          <div class="font-extrabold text-sm">Zurich Fitness, Basaveshwar Nagar</div>
+          <div class="text-xs text-white/60 truncate">R.N Arcade, 13, 2nd Stage Rd, Bengaluru 560079</div>
+        </div>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Zurich+Fitness+R.N+Arcade+Basaveshwar+Nagar+Bengaluru+560079" target="_blank" class="btn-volt rounded-xl px-4 py-2.5 text-xs font-extrabold shrink-0">NAVIGATE</a>
+      </div>
+    </div>
+    <div id="trial" class="reveal bg-gradient-to-b from-[#15151a] to-[#0e0e11] border border-volt/25 rounded-3xl p-6 md:p-8 relative overflow-hidden scroll-mt-28">
+      <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-volt via-white to-volt"></div>
+      <div class="flex items-center justify-between mb-2">
+        <h3 class="font-display text-3xl">CLAIM FREE <span class="text-volt">TRIAL</span></h3>
+        <span class="text-[11px] font-extrabold bg-red-500/15 text-red-400 border border-red-500/30 rounded-full px-3 py-1">5 SLOTS LEFT TODAY</span>
+      </div>
+      <p class="text-xs text-white/55 mb-6">1-day full access + group class + diet chart. No card required. Our team calls within 30 mins (8 AM – 10 PM).</p>
+      <form id="trialForm" class="space-y-3" novalidate>
+        <div class="grid grid-cols-2 gap-3">
+          <input id="fName" placeholder="Full name *" class="bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-sm w-full placeholder-white/30"/>
+          <input id="fPhone" placeholder="Phone *" maxlength="10" inputmode="numeric" class="bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-sm w-full placeholder-white/30"/>
+        </div>
+        <select id="fGoal" class="bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-sm w-full text-white/80">
+          <option value="">Select your goal *</option>
+          <option>Fat Loss</option><option>Muscle Gain</option><option>Zumba / Dance Fitness</option><option>Yoga & Mobility</option><option>Personal Training</option><option>Youth Fitness</option>
+        </select>
+        <div class="grid grid-cols-2 gap-3">
+          <select id="fTime" class="bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-sm w-full text-white/80">
+            <option value="">Preferred time *</option><option>Morning (5:30–10 AM)</option><option>Midday (10 AM–4 PM)</option><option>Evening (4–8 PM)</option><option>Night (8–11 PM)</option>
+          </select>
+          <input id="fDate" type="date" class="bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-sm w-full text-white/80"/>
+        </div>
+        <button type="submit" class="btn-volt w-full rounded-xl py-4 font-extrabold text-sm tracking-wide">BOOK MY FREE TRIAL →</button>
+        <p class="text-[11px] text-center text-white/40">By continuing you agree to be contacted on call / WhatsApp.</p>
+      </form>
+      <div class="mt-5 pt-5 border-t border-white/10 grid grid-cols-3 gap-2 text-center text-[11px] font-bold text-white/60">
+        <div><i class="fa-solid fa-phone text-volt block text-lg mb-1"></i><a href="tel:+918618889800" class="hover:text-volt">086188 89800</a></div>
+        <a href="https://wa.me/918618889800?text=Hi%20Zurich%20Fitness!%20I%20want%20a%20free%20trial." target="_blank" class="hover:text-volt"><i class="fa-brands fa-whatsapp text-volt block text-lg mb-1"></i>WhatsApp Us</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Zurich+Fitness+Basaveshwar+Nagar" target="_blank" class="hover:text-volt"><i class="fa-solid fa-diamond-turn-right text-volt block text-lg mb-1"></i>Get Directions</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="mt-10 grid lg:grid-cols-2 gap-6 items-start">
+    <div class="reveal">
+      <h3 class="font-display text-3xl mb-5">GOT <span class="text-volt">QUESTIONS?</span></h3>
+      <div id="faqList" class="space-y-3"></div>
+    </div>
+    <div class="reveal bg-volt text-black rounded-3xl p-7 md:p-8 diagonal">
+      <div class="font-display text-3xl leading-tight">FIRST MONTH?<br/>TRAIN LIKE YOU MEAN IT.</div>
+      <p class="text-sm font-semibold opacity-70 mt-3 mb-6">Join Zurich today — personal assessment, custom split & nutrition starter included.</p>
+      <div class="flex flex-wrap gap-3">
+        <a href="tel:+918618889800" class="bg-black text-volt rounded-full px-6 py-3.5 text-sm font-extrabold hover:bg-zinc-900 transition"><i class="fa-solid fa-phone mr-2"></i>086188 89800</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Zurich+Fitness+Basaveshwar+Nagar+Bengaluru+560079" target="_blank" class="border-2 border-black rounded-full px-6 py-3 text-sm font-extrabold hover:bg-black hover:text-volt transition">VISIT TODAY — OPEN TILL 11 PM</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-black border-t border-line pt-12 pb-6">
+  <div class="max-w-7xl mx-auto px-4 md:px-6 grid md:grid-cols-4 gap-8 mb-10">
+    <div>
+      <div class="flex items-center gap-3 mb-4"><div class="w-10 h-10 rounded-xl bg-volt text-black font-display text-xl flex items-center justify-center">Z</div><div class="font-display text-lg">ZURICH <span class="text-volt">FITNESS</span></div></div>
+      <p class="text-xs text-white/50 leading-relaxed mb-4">Spacious premium fitness center in Basaveshwar Nagar with modern equipment, personal training & group classes. Rated 4.9★ by 286 members.</p>
+      <div class="flex gap-2">
+        <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-volt hover:text-black transition"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-volt hover:text-black transition"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-volt hover:text-black transition"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://wa.me/918618889800" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-volt hover:text-black transition"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div>
+      <h5 class="font-extrabold text-xs tracking-[.2em] text-volt mb-4">EXPLORE</h5>
+      <div class="grid gap-2.5 text-sm text-white/60">
+        <a href="#overview" class="hover:text-volt">Overview</a><a href="#services" class="hover:text-volt">Services</a><a href="#schedule" class="hover:text-volt">Class Schedule</a><a href="#photos" class="hover:text-volt">Photos</a><a href="#reviews" class="hover:text-volt">Reviews</a><a href="#social" class="hover:text-volt">Social Updates</a>
+      </div>
+    </div>
+    <div>
+      <h5 class="font-extrabold text-xs tracking-[.2em] text-volt mb-4">TOP SERVICES</h5>
+      <div class="grid gap-2.5 text-sm text-white/60">
+        <span>HIIT Exercise Classes</span><span>CrossFit & Weight Training</span><span>Zumba & Dance Fitness</span><span>Yoga & Aerobics</span><span>Personal Training</span><span>Nutrition Consulting</span>
+      </div>
+    </div>
+    <div>
+      <h5 class="font-extrabold text-xs tracking-[.2em] text-volt mb-4">REACH US</h5>
+      <p class="text-xs text-white/60 leading-relaxed mb-3">R.N Arcade, 13, 2nd Stage Rd, A D Halli, Stage 1, Extension, Basaveshwar Nagar, Bengaluru, Karnataka 560079</p>
+      <a href="tel:+918618889800" class="text-volt font-extrabold">086188 89800</a>
+      <div class="text-xs text-green-400 font-bold mt-2">● Open Daily • 5:30 AM – 11:00 PM</div>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-4 md:px-6 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between gap-2 text-[11px] text-white/35">
+    <span>© 2026 Zurich Fitness, Basaveshwar Nagar. All rights reserved.</span>
+    <span>Made with 💪 in Bengaluru • 4.9★ from 286 Google reviews</span>
+  </div>
+</footer>
+
+<!-- FLOATING -->
+<div class="fixed bottom-5 right-5 z-[70] flex flex-col gap-2.5 items-end">
+  <a href="https://wa.me/918618889800?text=Hi%20Zurich%20Fitness!%20I%20want%20details." target="_blank" class="w-13 h-13 p-3.5 rounded-full bg-[#25D366] text-white text-xl shadow-2xl hover:scale-110 transition flex items-center justify-center"><i class="fa-brands fa-whatsapp"></i></a>
+  <a href="tel:+918618889800" class="flex items-center gap-2 bg-volt text-black rounded-full pl-4 pr-5 py-3 font-extrabold text-sm shadow-2xl hover:bg-white transition volt-glow"><i class="fa-solid fa-phone"></i> 086188 89800</a>
+  <button id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="hidden w-11 h-11 rounded-full glass items-center justify-center hover:text-volt"><i class="fa-solid fa-arrow-up"></i></button>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="fixed inset-0 z-[95] hidden bg-black/95 backdrop-blur items-center justify-center p-4">
+  <button onclick="closeLightbox()" class="absolute top-5 right-5 w-12 h-12 rounded-full bg-white/10 hover:bg-volt hover:text-black transition text-xl"><i class="fa-solid fa-xmark"></i></button>
+  <button onclick="stepLightbox(-1)" class="absolute left-3 md:left-8 w-12 h-12 rounded-full bg-white/10 hover:bg-volt hover:text-black transition"><i class="fa-solid fa-chevron-left"></i></button>
+  <button onclick="stepLightbox(1)" class="absolute right-3 md:right-8 w-12 h-12 rounded-full bg-white/10 hover:bg-volt hover:text-black transition"><i class="fa-solid fa-chevron-right"></i></button>
+  <div class="max-w-4xl w-full">
+    <img id="lbImg" src="" class="w-full max-h-[75vh] object-cover rounded-2xl border border-white/15" alt="Preview"/>
+    <div class="mt-3 flex justify-between items-center"><div id="lbCap" class="font-display text-lg tracking-wide"></div><div id="lbCount" class="text-xs text-white/50 font-bold"></div></div>
+  </div>
+</div>
+
+<!-- SERVICE MODAL -->
+<div id="serviceModal" class="fixed inset-0 z-[95] hidden bg-black/80 backdrop-blur-sm items-center justify-center p-4">
+  <div class="bg-card border border-volt/30 rounded-3xl max-w-lg w-full overflow-hidden">
+    <div class="relative h-52"><img id="smImg" src="" class="w-full h-full object-cover"/><div class="absolute inset-0 bg-gradient-to-t from-[#131316] to-transparent"></div>
+      <button onclick="closeService()" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/60 backdrop-blur hover:bg-volt hover:text-black transition"><i class="fa-solid fa-xmark"></i></button>
+      <div id="smCat" class="absolute top-4 left-4 text-[11px] font-extrabold bg-volt text-black px-3 py-1.5 rounded-full"></div>
+      <div id="smTitle" class="absolute bottom-4 left-5 font-display text-3xl"></div>
+    </div>
+    <div class="p-6">
+      <p id="smDesc" class="text-sm text-white/65 leading-relaxed mb-4"></p>
+      <div id="smMeta" class="grid grid-cols-3 gap-2 mb-5"></div>
+      <div class="grid grid-cols-2 gap-2">
+        <button onclick="closeService();document.getElementById('trial').scrollIntoView({behavior:'smooth'})" class="btn-volt rounded-xl py-3 text-sm font-extrabold">TRY FREE CLASS</button>
+        <a href="tel:+918618889800" class="btn-ghost rounded-xl py-3 text-sm font-bold text-center">ASK COACH <i class="fa-solid fa-phone ml-1 text-volt"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- REVIEW MODAL -->
+<div id="reviewModal" class="fixed inset-0 z-[95] hidden bg-black/80 backdrop-blur items-center justify-center p-4">
+  <div class="bg-card border border-line rounded-3xl max-w-md w-full p-7">
+    <div class="flex justify-between items-center mb-4"><h3 class="font-display text-2xl">SHARE YOUR <span class="text-volt">EXPERIENCE</span></h3><button onclick="closeReviewModal()" class="w-10 h-10 rounded-full bg-white/5 hover:bg-volt hover:text-black transition"><i class="fa-solid fa-xmark"></i></button></div>
+    <div class="flex gap-1.5 text-2xl mb-4" id="starInput"></div>
+    <input id="rName" placeholder="Your name" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm mb-3 placeholder-white/30"/>
+    <textarea id="rText" rows="4" placeholder="How was your workout, trainers, cleanliness...?" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm mb-4 placeholder-white/30"></textarea>
+    <button onclick="submitReview()" class="btn-volt w-full rounded-xl py-3.5 font-extrabold text-sm">POST REVIEW</button>
+  </div>
+</div>
+
+<!-- SUCCESS MODAL -->
+<div id="successModal" class="fixed inset-0 z-[96] hidden bg-black/85 backdrop-blur items-center justify-center p-4">
+  <div class="bg-card border border-volt/40 rounded-3xl max-w-sm w-full p-8 text-center">
+    <div class="w-20 h-20 mx-auto rounded-full bg-volt text-black flex items-center justify-center text-3xl mb-4 volt-glow"><i class="fa-solid fa-check"></i></div>
+    <h3 class="font-display text-3xl mb-2">YOU'RE <span class="text-volt">IN!</span></h3>
+    <p id="successMsg" class="text-sm text-white/60 mb-6">Trial booked! We'll call you shortly.</p>
+    <button onclick="closeSuccess()" class="btn-volt w-full rounded-xl py-3.5 font-extrabold text-sm">AWESOME 💪</button>
+  </div>
+</div>
+
+<div id="toasts" class="fixed top-20 right-4 z-[97] space-y-2 w-[320px] max-w-[calc(100vw-2rem)]"></div>
+
+<script>
+/* ============ DATA ============ */
+const SERVICES = [
+  {t:"HIIT Exercise Classes", cat:"cardio", icon:"fa-bolt", img:"https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=800&auto=format&fit=crop", d:"45-min torchers: sled pushes, battle ropes, box jumps & EMOM finishers. Burn 500-700 kcal per session.", cal:"600 kcal", level:"All Levels", time:"Mon–Sat • 7AM, 6PM"},
+  {t:"Aerobics", cat:"cardio", icon:"fa-heart-pulse", img:"https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=800&auto=format&fit=crop", d:"High-energy rhythmic cardio to Bollywood & EDM beats. Improves stamina, coordination & heart health.", cal:"450 kcal", level:"Beginner+", time:"Mon–Fri • 8AM, 5PM"},
+  {t:"CrossFit", cat:"strength", icon:"fa-fire", img:"https://images.unsplash.com/photo-1517963879433-6ad2b056d712?q=80&w=800&auto=format&fit=crop", d:"WODs, Olympic lifting, kipping, wall balls & rig work in our dedicated functional box with certified L1 coaches.", cal:"650 kcal", level:"Intermediate", time:"Mon–Sat • 6AM, 7PM"},
+  {t:"Zumba", cat:"cardio", icon:"fa-music", img:"https://images.unsplash.com/photo-1524594152303-9fd13543fe6e?q=80&w=800&auto=format&fit=crop", d:"Bengaluru's most loved Zumba party! Latin, Bollywood & Hip-hop moves — fitness disguised as a dance fest.", cal:"500 kcal", level:"All Levels", time:"Tue/Thu/Sat • 9AM, 6:30PM"},
+  {t:"Dance Fitness Classes", cat:"cardio", icon:"fa-person-dancing", img:"https://images.unsplash.com/photo-1504609813442-a8924e83f76e?q=80&w=800&auto=format&fit=crop", d:"Bollywood freestyle, Hip-hop grooves & wedding-sangeet specials. Great for weight-loss without boredom.", cal:"480 kcal", level:"All Levels", time:"Mon/Wed/Fri • 7PM"},
+  {t:"Personal Training", cat:"coach", icon:"fa-user-astronaut", img:"https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=800&auto=format&fit=crop", d:"1-on-1 elite coaching with body-composition scans, custom split, diet plan & WhatsApp accountability.", cal:"Custom", level:"1-on-1", time:"Slots 5:30AM–11PM"},
+  {t:"Youth Classes", cat:"coach", icon:"fa-children", img:"https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=800&auto=format&fit=crop", d:"Safe, supervised batches (ages 8–16): agility, bodyweight strength, games & posture correction.", cal:"Fun + Fit", level:"Ages 8–16", time:"Evenings • 4:30PM"},
+  {t:"Yoga Classes", cat:"mind", icon:"fa-spa", img:"https://images.unsplash.com/photo-1552196563-55cd4e45efb3?q=80&w=800&auto=format&fit=crop", d:"Hatha, Vinyasa & Power Yoga plus pranayama & meditation in our serene mind-body studio.", cal:"250 kcal", level:"All Levels", time:"Daily • 6:30AM, 7AM Sun"},
+  {t:"Weight Training", cat:"strength", icon:"fa-dumbbell", img:"https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=800&auto=format&fit=crop", d:"Spacious strength floor: 60+ stations, dumbbells to 60kg, squat racks, Smith & plate-loaded machines.", cal:"400 kcal", level:"All Levels", time:"Open Floor • 5:30AM–11PM"},
+  {t:"Nutrition Consulting", cat:"coach", icon:"fa-apple-whole", img:"https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=800&auto=format&fit=crop", d:"Practical Indian veg/non-veg diet charts, fat-loss & muscle-gain macros, PCOS/thyroid-friendly plans.", cal:"Diet Chart", level:"1-on-1", time:"By Appointment"},
+];
+const PHOTOS = [
+  {src:"https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800&auto=format&fit=crop", cap:"Main Strength Floor", cat:"gym", span:"col-span-2 row-span-1"},
+  {src:"https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=800&auto=format&fit=crop", cap:"Functional Training Box", cat:"gym", span:""},
+  {src:"https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=800&auto=format&fit=crop", cap:"HIIT Batch in Action", cat:"class", span:""},
+  {src:"https://images.unsplash.com/photo-1552196563-55cd4e45efb3?q=80&w=800&auto=format&fit=crop", cap:"Morning Yoga Studio", cat:"zone", span:""},
+  {src:"https://images.unsplash.com/photo-1517963879433-6ad2b056d712?q=80&w=800&auto=format&fit=crop", cap:"CrossFit Rig Zone", cat:"gym", span:""},
+  {src:"https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=800&auto=format&fit=crop", cap:"Personal Training", cat:"zone", span:""},
+  {src:"https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=800&auto=format&fit=crop", cap:"Dumbbell Alley • 2.5–60kg", cat:"gym", span:""},
+  {src:"https://images.unsplash.com/photo-1524594152303-9fd13543fe6e?q=80&w=800&auto=format&fit=crop", cap:"Zumba Party Nights", cat:"class", span:"col-span-2"},
+];
+const REVIEWS = [
+  {n:"Priya Sharma", t:"2 weeks ago", s:5, img:"https://i.pravatar.cc/100?img=47", txt:"Best gym in Basaveshwar Nagar, hands down! Super spacious, never crowded even at peak hours. Trainers actually correct your form. Lost 4kg in 6 weeks with their diet plan."},
+  {n:"Rahul Verma", t:"1 month ago", s:5, img:"https://i.pravatar.cc/100?img=12", txt:"Cleanest gym I've trained in Bengaluru. Modern imported machines, great CrossFit box and the 7 AM HIIT batch is addictive. Staff is knowledgeable and genuinely motivating."},
+  {n:"Divya Nair", t:"3 weeks ago", s:5, img:"https://i.pravatar.cc/100?img=32", txt:"Joined for Zumba & stayed for everything! The dance fitness and aerobics instructors bring insane energy. Clean washrooms, good music, open till 11pm — perfect for working women."},
+  {n:"Arun Kumar", t:"2 months ago", s:5, img:"https://i.pravatar.cc/100?img=53", txt:"Took personal training with Coach Santosh. Very scientific approach — assessment, mobility work, progressive overload. Gained 5kg lean muscle in 4 months. Worth every rupee."},
+  {n:"Sneha Reddy", t:"1 week ago", s:4, img:"https://i.pravatar.cc/100?img=45", txt:"Lovely yoga morning batches and very peaceful studio. Youth class for my 12-year-old is well supervised. Only wish weekend Zumba had more slots — it fills fast!"},
+];
+const TRAINERS = [
+  {n:"Santosh Gowda", r:"Head Coach • Strength", img:"https://images.unsplash.com/photo-1567013127542-490d757e51fc?q=80&w=500&auto=format&fit=crop", tag:"12 yrs • K11 Certified"},
+  {n:"Ananya Rao", r:"Zumba • Dance Fitness", img:"https://images.unsplash.com/photo-1571731956672-f2b94d7dd0cb?q=80&w=500&auto=format&fit=crop", tag:"ZIN™ Licensed"},
+  {n:"Vikram Singh", r:"CrossFit • HIIT", img:"https://images.unsplash.com/photo-1597347346681-06d94822f910?q=80&w=500&auto=format&fit=crop", tag:"CF-L1 • 8 yrs"},
+  {n:"Meera Iyer", r:"Yoga • Nutrition", img:"https://images.unsplash.com/photo-1548690312-e3b507d8c110?q=80&w=500&auto=format&fit=crop", tag:"RYT-500 • Diet Coach"},
+];
+const SCHEDULE = {
+  Mon:[{c:"HIIT Inferno",t:"7:00 AM",coach:"Vikram",seats:8,int:"High"},{c:"Aerobics Burn",t:"8:00 AM",coach:"Ananya",seats:12,int:"Medium"},{c:"Youth Fitness",t:"4:30 PM",coach:"Santosh",seats:10,int:"Low"},{c:"CrossFit WOD",t:"7:00 PM",coach:"Vikram",seats:6,int:"High"},{c:"Dance Fitness",t:"8:00 PM",coach:"Ananya",seats:15,int:"Medium"}],
+  Tue:[{c:"Power Yoga",t:"6:30 AM",coach:"Meera",seats:14,int:"Low"},{c:"Weight Training Club",t:"9:00 AM",coach:"Santosh",seats:20,int:"Medium"},{c:"Zumba Party",t:"6:30 PM",coach:"Ananya",seats:18,int:"Medium"},{c:"HIIT Inferno",t:"8:00 PM",coach:"Vikram",seats:8,int:"High"}],
+  Wed:[{c:"CrossFit WOD",t:"6:00 AM",coach:"Vikram",seats:6,int:"High"},{c:"Aerobics Burn",t:"8:00 AM",coach:"Ananya",seats:12,int:"Medium"},{c:"Youth Fitness",t:"4:30 PM",coach:"Santosh",seats:10,int:"Low"},{c:"Dance Fitness",t:"7:00 PM",coach:"Ananya",seats:15,int:"Medium"}],
+  Thu:[{c:"HIIT Inferno",t:"7:00 AM",coach:"Vikram",seats:8,int:"High"},{c:"Hatha Yoga",t:"9:00 AM",coach:"Meera",seats:14,int:"Low"},{c:"Zumba Party",t:"6:30 PM",coach:"Ananya",seats:18,int:"Medium"},{c:"Strength 101",t:"8:00 PM",coach:"Santosh",seats:10,int:"Medium"}],
+  Fri:[{c:"CrossFit WOD",t:"6:00 AM",coach:"Vikram",seats:6,int:"High"},{c:"Aerobics Burn",t:"8:00 AM",coach:"Ananya",seats:12,int:"Medium"},{c:"Dance Fitness",t:"7:00 PM",coach:"Ananya",seats:15,int:"Medium"},{c:"Night Lift Club",t:"9:00 PM",coach:"Santosh",seats:12,int:"Medium"}],
+  Sat:[{c:"Weekend Warrior HIIT",t:"8:00 AM",coach:"Vikram",seats:20,int:"High"},{c:"Zumba Mega Mix",t:"9:30 AM",coach:"Ananya",seats:25,int:"Medium"},{c:"Power Yoga",t:"5:00 PM",coach:"Meera",seats:14,int:"Low"}],
+  Sun:[{c:"Sunrise Yoga",t:"7:00 AM",coach:"Meera",seats:20,int:"Low"},{c:"Open Mat + Nutrition Q&A",t:"9:00 AM",coach:"All Coaches",seats:30,int:"Low"},{c:"Evening Mobility",t:"6:00 PM",coach:"Santosh",seats:12,int:"Low"}],
+};
+const SOCIALS = [
+  {img:"https://images.unsplash.com/photo-1517963879433-6ad2b056d712?q=80&w=700&auto=format&fit=crop", time:"2 days ago", likes:842, cap:"WOD Wednesday was LIT 🔥 120 wall balls, zero excuses. Who's in for Saturday's Weekend Warrior?", tags:"#CrossFit #BasaveshwarNagar"},
+  {img:"https://images.unsplash.com/photo-1524594152303-9fd13543fe6e?q=80&w=700&auto=format&fit=crop", time:"5 days ago", likes:1204, cap:"500+ calories, 100% smiles 💃 Our Zumba family keeps growing! New batch Tue/Thu/Sat 6:30 PM.", tags:"#Zumba #DanceFitness"},
+  {img:"https://images.unsplash.com/photo-1552196563-55cd4e45efb3?q=80&w=700&auto=format&fit=crop", time:"1 week ago", likes:689, cap:"Breathe in strength, breathe out stress 🧘‍♀️ Sunrise Yoga every day 6:30 AM. Mats on us.", tags:"#Yoga #MindBody"},
+  {img:"https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=700&auto=format&fit=crop", time:"1 week ago", likes:957, cap:"New arsenal just dropped 🏋️ Dumbbells up to 60kg + 4 new plate-loaded machines. Come lift!", tags:"#Strength #NewEquipment"},
+  {img:"https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=700&auto=format&fit=crop", time:"2 weeks ago", likes:1102, cap:"Transformation Tuesday 🏆 Arun +5kg lean muscle in 16 weeks with Coach Santosh. Your turn?", tags:"#PersonalTraining"},
+  {img:"https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=700&auto=format&fit=crop", time:"2 weeks ago", likes:534, cap:"Abs are built in the kitchen 🥗 Free nutrition starter chart with every trial this month.", tags:"#Nutrition"},
+];
+const FAQS = [
+  {q:"What are the gym timings? Are you really open till 11 PM?", a:"Yes! We're open Monday to Sunday, 5:30 AM to 11:00 PM. Morning batches start at 5:30 AM and the last floor slot + night lift club runs till 11 PM — ideal for working professionals."},
+  {q:"Where exactly is Zurich Fitness located? Is parking available?", a:"We're at R.N Arcade, 13, 2nd Stage Rd, A D Halli, Stage 1 Extension, Basaveshwar Nagar, Bengaluru 560079. Two-wheeler parking is right outside and car parking is available nearby. Tap 'Get Directions' for live navigation."},
+  {q:"I'm a beginner. Which class should I start with?", a:"Start with a free trial + fitness assessment. Most beginners love Aerobics, Zumba or Weight Training Club. Coaches scale every workout to your level and focus heavily on form and safety."},
+  {q:"Do you offer personal training and diet plans?", a:"Absolutely. Our certified personal trainers offer 1-on-1 strength, fat-loss and transformation coaching with body-composition tracking plus practical Indian veg/non-veg nutrition consulting."},
+  {q:"Are there batches for kids / teenagers?", a:"Yes — Youth Classes (ages 8–16) run weekday evenings at 4:30 PM with supervised agility, bodyweight training and games. Guardian consent is required for under-14 members."},
+];
+
+/* ============ HELPERS ============ */
+function toast(msg, icon="fa-circle-check"){
+  const el=document.createElement('div');
+  el.className='toast-in glass bg-black/85 border border-volt/30 rounded-2xl p-4 flex gap-3 items-start text-sm shadow-2xl';
+  el.innerHTML=`<div class="w-9 h-9 rounded-full bg-volt text-black flex items-center justify-center shrink-0"><i class="fa-solid ${icon}"></i></div><div class="flex-1"><div class="font-bold">${msg}</div><div class="text-[11px] text-white/50 mt-0.5">Zurich Fitness • Basaveshwar Nagar</div></div>`;
+  document.getElementById('toasts').appendChild(el);
+  setTimeout(()=>{ el.style.transition='all .4s'; el.style.opacity='0'; el.style.transform='translateX(100%)'; setTimeout(()=>el.remove(),400); },3400);
+}
+const $=id=>document.getElementById(id);
+
+/* ============ PRELOADER / NAV / SCROLL ============ */
+window.addEventListener('load',()=>{ setTimeout(()=>{ $('preloader').style.opacity='0'; $('preloader').style.visibility='hidden'; },900); initReveals(); });
+$('menuBtn').onclick=()=>$('mobileMenu').classList.toggle('hidden');
+document.querySelectorAll('#mobileMenu a').forEach(a=>a.onclick=()=>$('mobileMenu').classList.add('hidden'));
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  $('scrollBar').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+  const btn=$('topBtn'); if(h.scrollTop>600){ btn.classList.remove('hidden'); btn.classList.add('flex'); } else { btn.classList.add('hidden'); btn.classList.remove('flex'); }
+  document.querySelectorAll('section[id]').forEach(s=>{
+    const r=s.getBoundingClientRect();
+    if(r.top<200 && r.bottom>200){ document.querySelectorAll('.nav-link').forEach(l=>l.classList.toggle('active', l.getAttribute('href')==='#'+s.id)); }
+  });
+});
+function initReveals(){
+  gsap.registerPlugin(ScrollTrigger);
+  document.querySelectorAll('.reveal').forEach(el=>{
+    gsap.to(el,{opacity:1,y:0,duration:.9,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%'}});
+  });
+}
+/* counters */
+const cObs=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ const el=e.target,t=+el.dataset.target; let c=0; const step=Math.max(1,Math.ceil(t/60)); const iv=setInterval(()=>{ c+=step; if(c>=t){c=t;clearInterval(iv);} el.textContent=c.toLocaleString(); },25); cObs.unobserve(el);} }),{threshold:.5});
+document.querySelectorAll('.counter').forEach(el=>cObs.observe(el));
+
+/* ============ HOURS + LIVE STATUS ============ */
+const HOURS=[["Monday","5:30 AM – 11:00 PM"],["Tuesday","5:30 AM – 11:00 PM"],["Wednesday","5:30 AM – 11:00 PM"],["Thursday","5:30 AM – 11:00 PM"],["Friday","5:30 AM – 11:00 PM"],["Saturday","5:30 AM – 11:00 PM"],["Sunday","5:30 AM – 11:00 PM"]];
+(function(){
+  const today=new Date().getDay(); const order=[1,2,3,4,5,6,0];
+  $('hoursTable').innerHTML=HOURS.map((h,i)=>{
+    const isToday=( (today===0?6:today-1)===i );
+    return `<div class="px-5 py-3 flex justify-between items-center ${isToday?'bg-volt/10':''}"><span class="font-bold ${isToday?'text-volt':''}">${h[0]} ${isToday?'<span class="ml-2 text-[10px] bg-volt text-black px-2 py-0.5 rounded-full">TODAY</span>':''}</span><span class="text-white/60 text-[13px] font-semibold">${h[1]}</span></div>`;
+  }).join('');
+  const hr=new Date().getHours()+new Date().getMinutes()/60;
+  const open=hr>=5.5 && hr<23;
+  $('openBadge').innerHTML=open?'<span class="w-1.5 h-1.5 rounded-full bg-green-400 live-dot"></span> OPEN NOW':'<span class="w-1.5 h-1.5 rounded-full bg-red-400"></span> OPENS 5:30 AM';
+  $('heroStatus').textContent=open?'OPEN NOW • TILL 11 PM':'OPENS 5:30 AM • TILL 11 PM';
+  $('topStatus').textContent=open?'Open Now • Closes 11:00 PM • Join Today':'Closed • Opens 5:30 AM • Book Trial Now';
+})();
+
+/* ============ SERVICES ============ */
+function renderServices(f="all"){
+  $('servicesGrid').innerHTML=SERVICES.filter(s=>f==="all"||s.cat===f).map((s,i)=>`
+    <div onclick='openService(${SERVICES.indexOf(s)})' class="card-hover cursor-pointer bg-card border border-line rounded-3xl overflow-hidden group">
+      <div class="relative h-44 overflow-hidden">
+        <img src="${s.img}" loading="lazy" class="w-full h-full object-cover gallery-img" alt="${s.t}"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#131316] via-transparent to-transparent"></div>
+        <div class="absolute top-3 left-3 text-[10px] font-extrabold tracking-widest bg-black/70 backdrop-blur border border-white/15 px-3 py-1.5 rounded-full uppercase">${s.cat}</div>
+        <div class="absolute bottom-3 left-4 w-11 h-11 rounded-2xl bg-volt text-black flex items-center justify-center text-lg group-hover:rotate-12 transition"><i class="fa-solid ${s.icon}"></i></div>
+      </div>
+      <div class="p-5">
+        <h4 class="font-extrabold leading-tight mb-1.5">${s.t}</h4>
+        <p class="text-xs text-white/50 leading-relaxed line-clamp-2 mb-3">${s.d}</p>
+        <div class="flex items-center justify-between text-[11px] font-bold"><span class="text-volt"><i class="fa-regular fa-clock mr-1"></i>${s.time.split('•')[1]||s.time}</span><span class="text-white/40">DETAILS →</span></div>
+      </div>
+    </div>`).join('');
+}
+renderServices();
+document.querySelectorAll('#serviceFilters button').forEach(b=>b.onclick=()=>{ document.querySelectorAll('#serviceFilters button').forEach(x=>x.classList.remove('active')); b.classList.add('active'); renderServices(b.dataset.filter); });
+function openService(i){
+  const s=SERVICES[i];
+  $('smImg').src=s.img; $('smTitle').textContent=s.t; $('smCat').textContent=s.cat.toUpperCase(); $('smDesc').textContent=s.d;
+  $('smMeta').innerHTML=[['fa-fire',s.cal],['fa-signal',s.level],['fa-clock',s.time]].map(m=>`<div class="bg-white/5 border border-white/10 rounded-xl p-3 text-center"><i class="fa-solid ${m[0]} text-volt block mb-1"></i><div class="text-[11px] font-bold leading-tight">${m[1]}</div></div>`).join('');
+  $('serviceModal').classList.replace('hidden','flex');
+}
+function closeService(){ $('serviceModal').classList.replace('flex','hidden'); }
+
+/* ============ SCHEDULE ============ */
+let curDay=new Date().toLocaleDateString('en-US',{weekday:'short'});
+if(!SCHEDULE[curDay]) curDay='Mon';
+let bookings=[];
+function renderDays(){
+  $('dayTabs').innerHTML=Object.keys(SCHEDULE).map(d=>`<button onclick="setDay('${d}')" class="tab-day shrink-0 border border-white/15 rounded-full px-5 py-2.5 text-xs font-bold transition ${d===curDay?'active':''}">${d.toUpperCase()}</button>`).join('');
+}
+function setDay(d){ curDay=d; renderDays(); renderClasses(); }
+function renderClasses(){
+  $('classList').innerHTML=SCHEDULE[curDay].map((c,i)=>{
+    const booked=bookings.some(b=>b.day===curDay&&b.idx===i);
+    return `<div class="timetable-row flex items-center gap-3 bg-white/[.04] border border-white/10 rounded-2xl p-3.5">
+      <div class="w-12 h-12 rounded-xl ${c.int==='High'?'bg-red-500/15 text-red-400':c.int==='Medium'?'bg-volt/15 text-volt':'bg-sky-500/15 text-sky-300'} flex flex-col items-center justify-center shrink-0"><span class="font-display text-lg leading-none">${c.t.split(' ')[0].split(':')[0]}</span><span class="text-[9px] font-bold">${c.t.split(' ')[1]}</span></div>
+      <div class="flex-1 min-w-0"><div class="font-extrabold text-sm truncate">${c.c}</div><div class="text-[11px] text-white/50">Coach ${c.coach} • ${c.int} intensity • <span class="${c.seats<=6?'text-red-400':'text-green-400'} font-bold">${c.seats} seats left</span></div></div>
+      <button ${booked?'disabled':''} onclick="bookClass(${i})" class="shrink-0 text-xs font-extrabold rounded-full px-4 py-2.5 transition ${booked?'bg-green-500/20 text-green-400 border border-green-500/30':'bg-volt text-black hover:bg-white'}">${booked?'✓ BOOKED':'BOOK'}</button>
+    </div>`;
+  }).join('');
+}
+function bookClass(i){
+  const c=SCHEDULE[curDay][i];
+  if(c.seats<=0){ toast('Houseful! Try another slot.','fa-triangle-exclamation'); return; }
+  c.seats--; bookings.push({day:curDay,idx:i});
+  $('bookingCount').textContent=bookings.length; renderClasses();
+  toast(`${c.c} • ${curDay} ${c.t} booked!`,'fa-ticket');
+}
+function clearBookings(){ bookings=[]; Object.values(SCHEDULE).flat().forEach(c=>{ if(c.seats<30) c.seats+=0; }); $('bookingCount').textContent=0; renderClasses(); toast('Bookings cleared.','fa-rotate-left'); }
+renderDays(); renderClasses();
+
+/* ============ BMI ============ */
+function calcBMI(){
+  const h=parseFloat($('bmiH').value), w=parseFloat($('bmiW').value);
+  if(!h||!w||h<100||h>230||w<25||w>250){ toast('Enter valid height & weight.','fa-triangle-exclamation'); return; }
+  const bmi=w/Math.pow(h/100,2); $('bmiVal').textContent=bmi.toFixed(1);
+  let cat,col,ang;
+  if(bmi<18.5){cat='Underweight — bulk with coaching';col='#38bdf8';ang=-60;}
+  else if(bmi<25){cat='Fit Range — maintain & build!';col='#22c55e';ang=0;}
+  else if(bmi<30){cat='Overweight — HIIT + diet plan';col='#facc15';ang=45;}
+  else{cat='Obese — start PT + nutrition';col='#ef4444';ang=75;}
+  $('bmiCat').textContent=cat; $('bmiCat').style.color=col;
+  $('bmiNeedle').style.transform=`rotate(${ang}deg)`; $('bmiNeedle').style.background=col;
+  toast(`BMI ${bmi.toFixed(1)} — ${cat.split('—')[0]}`,'fa-heart-pulse');
+}
+
+/* ============ PRICING ============ */
+let billing='m';
+const PLANS=[{n:"MONTHLY",m:"₹2,000",y:"₹19,200",f:["Full floor access","2 group classes/day","Locker facility"]},{n:"QUARTERLY",m:"₹5,000",y:"₹48,000",f:["Everything in Monthly","1 PT session","Diet starter chart"],hot:true},{n:"ANNUAL",m:"₹15,000",y:"₹14,400",f:["Everything + 4 PT","Full nutrition plan","Guest passes x4"]}];
+function renderPrices(){
+  $('priceCards').innerHTML=PLANS.map(p=>`<div class="rounded-2xl p-3.5 text-center border ${p.hot?'bg-volt text-black border-volt':'bg-white/5 border-white/10'} relative">${p.hot?'<span class="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-black text-volt text-[9px] font-extrabold px-2.5 py-0.5 rounded-full">POPULAR</span>':''}<div class="text-[10px] font-extrabold tracking-widest opacity-70">${p.n}</div><div class="font-display text-xl my-1">${billing==='m'?p.m:p.y}</div><div class="text-[10px] font-bold opacity-60">${billing==='m'?'/month':'/year'}</div></div>`).join('');
+}
+function setBilling(v){ billing=v; $('billMonthly').classList.toggle('active',v==='m'); $('billYearly').classList.toggle('active',v==='y'); renderPrices(); }
+renderPrices();
+
+/* ============ PHOTOS + LIGHTBOX ============ */
+let lbList=[], lbIdx=0;
+function renderPhotos(f="all"){
+  const list=PHOTOS.map((p,i)=>({...p,i})).filter(p=>f==="all"||p.cat===f);
+  lbList=list;
+  $('photoGrid').innerHTML=list.map(p=>`<div onclick="openLightbox(${list.indexOf(p)})" class="gallery-item relative rounded-2xl overflow-hidden cursor-pointer group border border-white/10 ${p.span}">
+    <img src="${p.src}" loading="lazy" class="gallery-img w-full h-full object-cover" alt="${p.cap}"/>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent opacity-80 group-hover:opacity-100 transition"></div>
+    <div class="absolute bottom-3 left-3 right-3 flex justify-between items-end"><span class="font-bold text-[13px]">${p.cap}</span><span class="w-8 h-8 rounded-full bg-volt text-black flex items-center justify-center opacity-0 group-hover:opacity-100 transition text-xs"><i class="fa-solid fa-expand"></i></span></div>
+  </div>`).join('');
+}
+renderPhotos();
+document.querySelectorAll('#photoFilters button').forEach(b=>b.onclick=()=>{ document.querySelectorAll('#photoFilters button').forEach(x=>x.classList.remove('active')); b.classList.add('active'); renderPhotos(b.dataset.pfilter); });
+function openLightbox(i){ lbIdx=i; updateLB(); $('lightbox').classList.replace('hidden','flex'); document.body.classList.add('lightbox-open'); }
+function updateLB(){ const p=lbList[lbIdx]; $('lbImg').src=p.src; $('lbCap').textContent=p.cap; $('lbCount').textContent=(lbIdx+1)+' / '+lbList.length; }
+function stepLightbox(d){ lbIdx=(lbIdx+d+lbList.length)%lbList.length; updateLB(); }
+function closeLightbox(){ $('lightbox').classList.replace('flex','hidden'); document.body.classList.remove('lightbox-open'); }
+document.addEventListener('keydown',e=>{ if(e.key==='Escape'){closeLightbox();closeService();closeReviewModal();closeSuccess();} if(!$('lightbox').classList.contains('hidden')){ if(e.key==='ArrowRight')stepLightbox(1); if(e.key==='ArrowLeft')stepLightbox(-1);} });
+$('lightbox').addEventListener('click',e=>{ if(e.target===$('lightbox')) closeLightbox(); });
+
+/* ============ REVIEWS ============ */
+$('ratingBars').innerHTML=[[5,92],[4,6],[3,1],[2,0],[1,1]].map(r=>`<div class="flex items-center gap-2 text-xs"><span class="font-bold w-3">${r[0]}</span><div class="flex-1 h-2 rounded-full bg-white/10 overflow-hidden"><div class="h-full bg-volt rounded-full" style="width:${r[1]}%"></div></div><span class="text-white/40 w-8">${r[1]}%</span></div>`).join('');
+let rIdx=0, rTimer;
+function renderReview(){
+  const r=REVIEWS[rIdx];
+  $('reviewCard').style.opacity=0;
+  setTimeout(()=>{
+    $('reviewCard').innerHTML=`<div class="flex items-center gap-3 mb-4"><img src="${r.img}" class="w-12 h-12 rounded-full border-2 border-volt object-cover"/><div><div class="font-extrabold text-sm flex items-center gap-1.5">${r.n} <i class="fa-solid fa-circle-check text-sky-400 text-xs"></i></div><div class="text-[11px] text-white/40">${r.t} • Posted on Google</div></div><div class="ml-auto text-volt text-sm tracking-widest">${'★'.repeat(r.s)}<span class="text-white/20">${'★'.repeat(5-r.s)}</span></div></div>
+    <p class="text-[15px] md:text-lg leading-relaxed text-white/80">“${r.txt}”</p>
+    <div class="mt-5 flex gap-2"><button onclick="helpful(this)" class="text-xs font-bold border border-white/15 rounded-full px-4 py-2 hover:border-volt hover:text-volt transition"><i class="fa-regular fa-thumbs-up mr-1"></i> Helpful (<span>0</span>)</button><span class="text-xs font-bold bg-white/5 border border-white/10 rounded-full px-4 py-2 text-white/50">Zurich Fitness • Basaveshwar Nagar</span></div>`;
+    $('reviewCard').style.opacity=1;
+    $('reviewDots').innerHTML=REVIEWS.map((_,i)=>`<span class="${i===rIdx?'active':''}"></span>`).join('');
+    $('reviewProgress').style.width=((rIdx+1)/REVIEWS.length*100)+'%';
+  },200);
+}
+function helpful(btn){ const s=btn.querySelector('span'); s.textContent=+s.textContent+1; btn.classList.add('text-volt','border-volt'); toast('Thanks for your feedback!'); }
+function moveReview(d){ rIdx=(rIdx+d+REVIEWS.length)%REVIEWS.length; renderReview(); restartR(); }
+function restartR(){ clearInterval(rTimer); rTimer=setInterval(()=>{ rIdx=(rIdx+1)%REVIEWS.length; renderReview(); },5500); }
+renderReview(); restartR();
+$('miniReviews').innerHTML=REVIEWS.slice(0,2).map(r=>`<div class="bg-card border border-line rounded-2xl p-4"><div class="flex items-center gap-2.5 mb-2"><img src="${r.img}" class="w-9 h-9 rounded-full"/><div class="text-xs font-extrabold">${r.n}</div><div class="ml-auto text-volt text-xs">★★★★★</div></div><p class="text-xs text-white/55 leading-relaxed line-clamp-3">“${r.txt}”</p></div>`).join('');
+let userStars=5;
+$('starInput').innerHTML=[1,2,3,4,5].map(i=>`<button onclick="setStars(${i})" class="hover:scale-125 transition ${i<=5?'text-volt':'text-white/20'}"><i class="fa-solid fa-star"></i></button>`).join('');
+function setStars(n){ userStars=n; [...$('starInput').children].forEach((b,i)=>b.className=`hover:scale-125 transition ${i<n?'text-volt':'text-white/20'}`); }
+function openReviewModal(){ $('reviewModal').classList.replace('hidden','flex'); }
+function closeReviewModal(){ $('reviewModal').classList.replace('flex','hidden'); }
+function submitReview(){
+  const n=$('rName').value.trim(), t=$('rText').value.trim();
+  if(!n||!t){ toast('Please add name & review.','fa-triangle-exclamation'); return; }
+  REVIEWS.unshift({n,t,s:userStars,img:`https://i.pravatar.cc/100?u=${Date.now()}`,txt:t}); rIdx=0; renderReview(); closeReviewModal(); $('rName').value='';$('rText').value='';
+  toast('Review posted! Thank you ❤️'); 
+}
+
+/* ============ TRAINERS ============ */
+$('trainerGrid').innerHTML=TRAINERS.map(t=>`<div class="card-hover bg-card border border-line rounded-3xl overflow-hidden group"><div class="relative h-72 overflow-hidden"><img src="${t.img}" loading="lazy" class="w-full h-full object-cover gallery-img" alt="${t.n}"/><div class="absolute inset-0 bg-gradient-to-t from-[#131316] via-transparent to-transparent"></div><span class="absolute top-3 left-3 text-[10px] font-extrabold bg-volt text-black px-3 py-1.5 rounded-full">${t.tag}</span></div><div class="p-5 flex items-center justify-between"><div><div class="font-extrabold">${t.n}</div><div class="text-xs text-volt font-bold mt-0.5">${t.r}</div></div><a href="tel:+918618889800" class="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center hover:bg-volt hover:text-black transition"><i class="fa-solid fa-phone text-sm"></i></a></div></div>`).join('');
+
+/* ============ SOCIAL ============ */
+let following=false;
+$('storyRow').innerHTML=["HIIT 🔥","Zumba 💃","Yoga 🧘","Diet 🥗","PT 🏆","New Gear"].map((s,i)=>`<div class="flex flex-col items-center gap-1.5 shrink-0 cursor-pointer group" onclick="toast('${s} story opened!')"><div class="w-16 h-16 rounded-full p-[2.5px] bg-gradient-to-tr from-[#FF3E7A] to-[#FFD93E] group-hover:scale-105 transition"><div class="w-full h-full rounded-full border-[3px] border-[#0E0E11] overflow-hidden"><img src="${PHOTOS[i%PHOTOS.length].src}" class="w-full h-full object-cover"/></div></div><span class="text-[10px] font-bold text-white/60">${s}</span></div>`).join('');
+function renderSocial(){
+  $('socialGrid').innerHTML=SOCIALS.map((p,i)=>`<article class="bg-card border border-line rounded-3xl overflow-hidden card-hover">
+    <div class="p-4 flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-volt text-black font-display flex items-center justify-center">Z</div><div class="flex-1"><div class="text-[13px] font-extrabold">zurich.fitness.blr</div><div class="text-[11px] text-white/40">${p.time} • Basaveshwar Nagar</div></div><button class="text-white/40 hover:text-white"><i class="fa-solid fa-ellipsis"></i></button></div>
+    <div class="relative overflow-hidden group cursor-pointer" ondblclick="likePost(${i},true)"><img src="${p.img}" loading="lazy" class="w-full h-64 object-cover gallery-img" alt="Post"/><div id="heart-${i}" class="absolute inset-0 hidden items-center justify-center"><i class="fa-solid fa-heart text-white text-7xl drop-shadow-2xl scale-0 transition" ></i></div></div>
+    <div class="p-4"><div class="flex items-center gap-4 text-xl mb-2.5"><button id="like-${i}" onclick="likePost(${i})" class="like-btn hover:text-[#ff4d6d] transition"><i class="fa-regular fa-heart"></i></button><button onclick="toast('Comments opening soon!')"><i class="fa-regular fa-comment hover:text-volt"></i></button><button onclick="toast('Post link copied!','fa-link')"><i class="fa-regular fa-paper-plane hover:text-volt"></i></button><button class="ml-auto" onclick="toast('Saved to collection!','fa-bookmark')"><i class="fa-regular fa-bookmark hover:text-volt"></i></button></div>
+    <div class="text-[13px] font-extrabold mb-1"><span id="likes-${i}">${p.likes.toLocaleString()}</span> likes</div>
+    <p class="text-[13px] text-white/65 leading-relaxed"><span class="font-bold text-white">zurich.fitness.blr</span> ${p.cap} <span class="text-sky-400">${p.tags}</span></p></div>
+  </article>`).join('');
+}
+let likedSet=new Set();
+function likePost(i,big=false){
+  const btn=$('like-'+i);
+  if(!likedSet.has(i)){ likedSet.add(i); SOCIALS[i].likes++; btn.classList.add('liked'); btn.innerHTML='<i class="fa-solid fa-heart"></i>'; }
+  else if(!big){ likedSet.delete(i); SOCIALS[i].likes--; btn.classList.remove('liked'); btn.innerHTML='<i class="fa-regular fa-heart"></i>'; }
+  $('likes-'+i).textContent=SOCIALS[i].likes.toLocaleString();
+  if(big){ const h=$('heart-'+i); h.classList.replace('hidden','flex'); const ic=h.querySelector('i'); ic.style.transform='scale(1.3)'; setTimeout(()=>{ic.style.transform='scale(1)';},150); setTimeout(()=>h.classList.replace('flex','hidden'),700); }
+}
+function toggleFollow(){ following=!following; $('followBtn').textContent=following?'Following ✓':'Follow'; $('followBtn').classList.toggle('bg-white',following); toast(following?'Following @zurich.fitness.blr':'Unfollowed'); }
+renderSocial();
+
+/* ============ FAQ ============ */
+$('faqList').innerHTML=FAQS.map((f,i)=>`<div class="faq-item bg-card border border-line rounded-2xl overflow-hidden ${i===0?'open':''}"><button onclick="toggleFaq(${i})" class="w-full flex items-center justify-between gap-3 p-5 text-left font-bold text-sm">${f.q}<span class="faq-icon w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 transition text-lg leading-none">+</span></button><div class="faq-answer"><p class="px-5 pb-5 text-[13px] text-white/55 leading-relaxed">${f.a}</p></div></div>`).join('');
+function toggleFaq(i){ document.querySelectorAll('.faq-item').forEach((el,j)=>{ if(j===i) el.classList.toggle('open'); else el.classList.remove('open'); }); }
+
+/* ============ TRIAL FORM ============ */
+(function(){ const d=$('fDate'); const t=new Date(); d.min=t.toISOString().split('T')[0]; d.value=d.min; })();
+$('trialForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const n=$('fName').value.trim(), p=$('fPhone').value.trim(), g=$('fGoal').value, tm=$('fTime').value;
+  if(n.length<3){ toast('Please enter your full name.','fa-triangle-exclamation'); return; }
+  if(!/^[6-9]\d{9}$/.test(p)){ toast('Enter valid 10-digit mobile number.','fa-triangle-exclamation'); return; }
+  if(!g||!tm){ toast('Select goal & preferred time.','fa-triangle-exclamation'); return; }
+  $('successMsg').textContent=`Thanks ${n.split(' ')[0]}! Free ${g} trial booked (${tm}). We'll call ${p} within 30 mins.`;
+  $('successModal').classList.replace('hidden','flex');
+  $('trialForm').reset();
+});
+function closeSuccess(){ $('successModal').classList.replace('flex','hidden'); }
+
+/* marquee duplicate */
+$('marqueeContent').parentElement.innerHTML += $('marqueeContent').outerHTML;
+</script>
+</body>
+</html>
